@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 
 import { Album } from '../album'
+
 @Component({
   selector: 'app-product-tracklisting',
   templateUrl: './product-tracklisting.component.html',
@@ -12,7 +13,7 @@ export class ProductTracklistingComponent implements OnInit {
 
   constructor(private _productService: ProductService) { }
 
-  albumInfo: Album
+  albumInfo: Album;
 
   ngOnInit() {
     this._productService.getAlbum(1).subscribe(response => this.albumInfo = response);
